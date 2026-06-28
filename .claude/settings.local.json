@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php artisan *)",
+      "Bash(New-Item -ItemType Directory -Force \"C:\\\\xampp\\\\htdocs\\\\dashboard-reporting\\\\lang\\\\en\")",
+      "Bash(Out-Null)",
+      "Bash(New-Item -ItemType Directory -Force \"C:\\\\xampp\\\\htdocs\\\\dashboard-reporting\\\\lang\\\\ar\")",
+      "Bash(New-Item -ItemType Directory -Force \"C:\\\\xampp\\\\htdocs\\\\dashboard-reporting\\\\app\\\\Http\\\\Middleware\")",
+      "PowerShell(New-Item *)",
+      "Bash(php -r 'require '\\\\''vendor/autoload.php'\\\\''; $app = require '\\\\''bootstrap/app.php'\\\\''; $app->make\\('\\\\''translator'\\\\''\\)->setLocale\\('\\\\''ar'\\\\''\\); echo __\\('\\\\''ui.nav_dashboard'\\\\''\\) . PHP_EOL; $app->make\\('\\\\''translator'\\\\''\\)->setLocale\\('\\\\''en'\\\\''\\); echo __\\('\\\\''ui.nav_dashboard'\\\\''\\) . PHP_EOL;')",
+      "Bash(php -l app/Http/Controllers/*.php app/Models/*.php)",
+      "Bash(dir /s /b resources\\\\views\\\\*.blade.php)",
+      "PowerShell(cd \"C:\\\\xampp\\\\htdocs\\\\dashboard-reporting\"; php artisan tinker --execute=\"App\\\\Http\\\\Controllers\\\\ProjectController::class; \\\\$p = App\\\\Models\\\\Project::first\\(\\); \\\\$p->load\\(['company','category','tasks','achievements']\\); echo 'tasks:' . \\\\$p->tasks->count\\(\\) . ' achievements:' . \\\\$p->achievements->count\\(\\);\" 2>&1)",
+      "PowerShell(cd \"C:\\\\xampp\\\\htdocs\\\\dashboard-reporting\"; php -r \"require 'vendor/autoload.php'; \\\\$app = require 'bootstrap/app.php'; \\\\$app->make\\('Illuminate\\\\Foundation\\\\Bootstrap\\\\LoadConfiguration'\\)->bootstrap\\(\\\\$app\\); \\\\$p = App\\\\Models\\\\Project::with\\(['company','category','tasks','achievements']\\)->first\\(\\); echo 'tasks:' . \\\\$p->tasks->count\\(\\) . ' ach:' . \\\\$p->achievements->count\\(\\) . PHP_EOL;\" 2>&1)"
+    ]
+  }
+}
